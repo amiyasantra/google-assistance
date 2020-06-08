@@ -39,7 +39,7 @@ restService.post("/echo", function(req, res) {
 console.log(util.inspect(req.headers, {showHidden: false, depth: null}))
 // console.log("got an authorization**:..." + req.headers.authorization);
 console.log("got an authorization****************:..." + util.inspect(req.body, {showHidden: false, depth: null}));
-console.log("req header*****..." + util.inspect(req.body.originalDetectIntentRequest, {showHidden: false, depth: null}));
+console.log("req header*****..." + util.inspect(req.body.originalDetectIntentRequest.payload.user.accessToken, {showHidden: false, depth: null}));
 
   return res.json({
     payload: speechResponse,
