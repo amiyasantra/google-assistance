@@ -2,7 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const util = require('util')
 const restService = express();
 
 restService.use(
@@ -36,6 +36,7 @@ restService.post("/echo", function(req, res) {
     }
   };
 
+console.log(util.inspect(req.headers, {showHidden: false, depth: null}))
 console.log("got an authorization**:..." + req.headers.authorization);
 console.log("got an authorization****************:..." + req.headers);
 console.log("req header*****..." + req.body.originalDetectIntentRequest);
